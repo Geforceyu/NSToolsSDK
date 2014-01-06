@@ -15,6 +15,7 @@
 #import "NTAlertView.h"
 #import "NSTools.h"
 
+#pragma mark NTAlertView Interface
 @interface NTAlertView ()
 {
     AlertViewController * viewController;
@@ -24,14 +25,16 @@
     UIButton            * cancelButton;
     UIButton            * confirmButton;
 }
-@property (nonatomic, strong) void(^callbackAction)(NSInteger buttonIndex);
-@property (nonatomic, strong) UIWindow * alertWindow;
-@property (nonatomic, assign) id<NTAlertViewDelegate> delegate;
+@property (nonatomic, strong) void                        (^callbackAction)(NSInteger buttonIndex);
+@property (nonatomic, strong) UIWindow                  * alertWindow;
+@property (nonatomic, assign) id<NTAlertViewDelegate>     delegate;
 
 - (void)reLayout;
 
 @end
 
+
+#pragma mark NTAlertView Implementation
 @implementation NTAlertView
 
 - (void)dealloc
@@ -42,9 +45,9 @@
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle confirmButtonTitle:(NSString *)confirmButtonTitle callBackAction:(void (^)(NSInteger))callbackAction keepPointer:(NTAlertView *__autoreleasing *)alertView delegate:(id<NTAlertViewDelegate>)delegate
 {
-    self = [super initWithFrame:[NSTools rootViewController].view.bounds];
+    self = [super init];
     if (self) {
-        self.alertWindow = [[UIWindow alloc] initWithFrame:[NSTools rootViewController].view.bounds];
+        self.alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         self.alertWindow.windowLevel = UIWindowLevelAlert;
         viewController = [[AlertViewController alloc] init];
         self.alertWindow.rootViewController = viewController;
@@ -57,7 +60,7 @@
         contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
         [self addSubview:contentView];
         
-        titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 15, 200, 20)];
+        titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 12, 200, 20)];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textColor = [UIColor blackColor];
@@ -141,7 +144,7 @@
     contentView.transform = CGAffineTransformMakeScale(1.5, 1.5);
     [self.alertWindow makeKeyAndVisible];
     contentView.center = self.center;
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.alertWindow.alpha = 1;
         contentView.transform = CGAffineTransformMakeScale(1, 1);
     } completion:^(BOOL finished) {
@@ -150,7 +153,7 @@
 
 - (void)cancel
 {
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         contentView.transform = CGAffineTransformMakeScale(0.5, 0.5);
         self.alertWindow.alpha = 0;
     } completion:^(BOOL finished) {
@@ -161,7 +164,7 @@
 - (void)reLayout
 {
 
-    contentView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    contentView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)-40);
 }
 
 - (void)setMessage:(NSString *)message
@@ -224,18 +227,8 @@
 
 
 
-
-/* AlertViewController Implementation */
+#pragma mark AlertViewController Implementation
 @implementation AlertViewController
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -254,7 +247,7 @@
 
 - (BOOL)prefersStatusBarHidden
 {
-    return [[NSTools rootViewController] prefersStatusBarHidden];
+    return _NSTools.prefersStatusBarHidden;
 }
 
 @end

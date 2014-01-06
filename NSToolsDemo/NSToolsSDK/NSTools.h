@@ -60,6 +60,7 @@
 @property (nonatomic, strong) NSDateFormatter * dateFormatter_DateOnly;
 @property (nonatomic, strong) NSDateFormatter * dateFormatter_Full;
 @property (nonatomic, strong) NSDate          * originTime;
+@property (nonatomic, assign) BOOL              prefersStatusBarHidden;
 
 + (NSTools *)sharedTools;
 

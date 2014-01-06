@@ -14,7 +14,6 @@
     UITextView * editeViewTestTtv;
     UITextView * postTestURLTtv;
     UITextView * postTestActionTtv;
-    NTAlertView * alertView;
     UIButton * alertTest;
 }
 - (void)editeViewTest;
@@ -96,8 +95,20 @@
 
 - (void)testPost
 {
+    NTAlertView * alertView = nil;
+    [NSTools showAlertWithTitle:@"Tips" message:@"Posting Request! Please Wait..." cancelButtonTitle:@"Cancel" confirmButtonTitle:nil callBackAction:^(NSInteger buttonIndex) {
+        if ([alertView.message isEqualToString:@"Posting Request! Please Wait..."]) {
+            [NSTools cancelPostWithPostName:@"testPost"];
+        }
+    } keepPointer:&alertView delegate:nil];
+    
     [NSTools asyncPostWithURLString:postTestURLTtv.text  paramsDic:nil postName:@"testPost" withCompletion:^(id content, PostEndState state) {
-        NSLog(@"-%d-\n%@",state,content);
+        if (state == PostEndStateSucceed) {
+            [alertView cancelWithMessage:nil dely:0.5];
+        }
+        if (state == PostEndStateFailed || state == PostEndStateAnalysisFailed) {
+            [alertView reloadMessage:[NSString stringWithFormat:@"Post Failed!\n%@",content] cancelButtonTitle:@"OK" confirmButtonTitile:nil];
+        }
     }];
 }
 
@@ -108,25 +119,9 @@
 
 - (void)alertTest
 {
-//    [NSTools showAlertWithTitle:@"Test" message:@"This is a test!" cancelButtonTitle:@"Cancel" confirmButtonTitle:@"OK" callBackAction:^(NSInteger buttonIndex){
-//        NSLog(@"%d",buttonIndex);
-//    } keepPointer:nil delegate:self];
-    
-//    [[[UIAlertView alloc] initWithTitle:@"1" message:@"2" delegate:@"123" cancelButtonTitle:@"123123" otherButtonTitles:@"111", nil]show];
-     alertView = [[NTAlertView alloc] initWithTitle:@"test" message:@"test" cancelButtonTitle:@"ok" confirmButtonTitle:@"OK" callBackAction:nil keepPointer:nil delegate:self];
-    [alertView show];
-    alertView = nil;
-//    [self performSelector:@selector(addtest) withObject:nil afterDelay:2];
+    [NSTools showAlertWithTitle:@"Tips" message:@"This is a NTAlertView" cancelButtonTitle:@"Cancel" confirmButtonTitle:@"OK" callBackAction:^(NSInteger buttonIndex) {
+        NSLog(@"%d",buttonIndex);
+    } keepPointer:nil delegate:nil];
 }
 
-- (void)addtest
-{
-    [alertView reloadMessage:@"test test" cancelButtonTitle:@"cancel" confirmButtonTitile:@"ok"];
-    alertView = nil;
-}
-
-- (void)alertView:(NTAlertView *)alertView cancelledWithButtonIndex:(NSInteger)index
-{
-    NSLog(@"%d",index);
-}
 @end

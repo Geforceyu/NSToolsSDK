@@ -10,6 +10,5 @@
 
 @interface RootView : UIView
 
-- (void)reLayout;
 
 @end

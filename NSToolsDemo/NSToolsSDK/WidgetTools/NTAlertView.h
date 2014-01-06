@@ -15,18 +15,20 @@
 #import <UIKit/UIKit.h>
 @protocol NTAlertViewDelegate;
 
+#pragma mark NTAlertView Interface
 @interface NTAlertView : UIView
 
 @property (nonatomic, assign)NSString * message;
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle confirmButtonTitle:(NSString *)confirmButtonTitle callBackAction:(void(^)(NSInteger buttonIndex))callbackAction keepPointer:(NTAlertView **)alertView delegate:(id<NTAlertViewDelegate>)delegate;
-
 - (void)cancelWithMessage:(NSString *)message dely:(NSTimeInterval)timeInterval;
 - (void)reloadMessage:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle confirmButtonTitile:(NSString *)confirmButtonTitle;
 - (void)show;
 
 @end
 
+
+#pragma mark NTAlertViewDelegate Protocol
 @protocol NTAlertViewDelegate <NSObject>
 @optional
 
@@ -34,6 +36,8 @@
 
 @end
 
+
+#pragma mark AlertViewController Interface
 @interface AlertViewController : UIViewController
 
 @end

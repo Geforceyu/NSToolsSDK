@@ -132,7 +132,7 @@
 - (void)submitButtonCallback
 {
     if ([contentTextView.text length] < minWords) {
-        [[[UIAlertView alloc] initWithTitle:_AlertTitle message:[NSString stringWithFormat:_MinAlertMessage,minWords] delegate:nil cancelButtonTitle:_CancelButtonTitle otherButtonTitles:nil, nil] show];
+        [NSTools showAlertWithTitle:_AlertTitle message:_MinAlertMessage cancelButtonTitle:_CancelButtonTitle confirmButtonTitle:nil callBackAction:nil keepPointer:nil delegate:nil];
         return;
     }
     if ([self.delegate respondsToSelector:@selector(editeView:didFinishedEditeWithMessage:)]) {
@@ -169,7 +169,7 @@
     }
     else{
         if ([textView.text length] >= maxWords) {
-            [[[UIAlertView alloc]initWithTitle:_AlertTitle message:_MaxAlertMessage delegate:nil cancelButtonTitle:_CancelButtonTitle otherButtonTitles:nil, nil] show];
+            [NSTools showAlertWithTitle:_AlertTitle message:_MaxAlertMessage cancelButtonTitle:_CancelButtonTitle confirmButtonTitle:nil callBackAction:nil keepPointer:nil delegate:nil];
             return NO;
         }
     }

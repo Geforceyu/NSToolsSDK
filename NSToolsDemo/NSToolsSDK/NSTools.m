@@ -71,6 +71,7 @@ static NSTools * singleton = nil;
         self.dateFormatter_Full.dateFormat = _FullDateFormat;
         
         self.activingPostRequests = [[NSMutableArray alloc] init];
+        self.prefersStatusBarHidden = [UIApplication sharedApplication].keyWindow.rootViewController.prefersStatusBarHidden;
     }
     return self;
 }

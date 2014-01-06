@@ -65,7 +65,7 @@
     if (error) {
         NSLog(@"JSON Analysis Error:%@",error.localizedDescription);
         if (self.completion) {
-            self.completion(nil, PostEndStateAnalysisFailed);
+            self.completion(@"Data Error !", PostEndStateAnalysisFailed);
         }
         [self.delegate PostRequestEnded:self];
     }
@@ -81,7 +81,7 @@
 {
     NSLog(@"Request Failed! Error:%@",error.localizedDescription);
     if (self.completion) {
-        self.completion(nil, PostEndStateFailed);
+        self.completion(@"Connection Error !", PostEndStateFailed);
     }
     [self.delegate PostRequestEnded:self];
 }
