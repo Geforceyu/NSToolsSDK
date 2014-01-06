@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  RootView.h
 //  NSToolsSDK
 //
 //  Created by Nemo on 14-1-4.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController
+@interface RootView : UIView
+
+- (void)reLayout;
 
 @end

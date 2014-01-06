@@ -252,4 +252,9 @@
     return UIInterfaceOrientationMaskAll;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return [[NSTools rootViewController] prefersStatusBarHidden];
+}
+
 @end

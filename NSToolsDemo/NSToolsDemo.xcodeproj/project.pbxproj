@@ -24,6 +24,7 @@
 		BA1E42B0187AC79A001DBBD7 /* NTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1E42AB187AC79A001DBBD7 /* NTAlertView.m */; };
 		BA1E42B1187AC79A001DBBD7 /* NTEditeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1E42AD187AC79A001DBBD7 /* NTEditeView.m */; };
 		BA1E42B4187AC7B8001DBBD7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1E42B3187AC7B8001DBBD7 /* RootViewController.m */; };
+		BA1E42B7187AC9D3001DBBD7 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1E42B6187AC9D3001DBBD7 /* RootView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		BA1E42AD187AC79A001DBBD7 /* NTEditeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTEditeView.m; sourceTree = "<group>"; };
 		BA1E42B2187AC7B8001DBBD7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BA1E42B3187AC7B8001DBBD7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		BA1E42B5187AC9D3001DBBD7 /* RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootView.h; sourceTree = "<group>"; };
+		BA1E42B6187AC9D3001DBBD7 /* RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				BA1E4284187AB3E4001DBBD7 /* AppDelegate.m */,
 				BA1E42B2187AC7B8001DBBD7 /* RootViewController.h */,
 				BA1E42B3187AC7B8001DBBD7 /* RootViewController.m */,
+				BA1E42B5187AC9D3001DBBD7 /* RootView.h */,
+				BA1E42B6187AC9D3001DBBD7 /* RootView.m */,
 				BA1E4286187AB3E4001DBBD7 /* Images.xcassets */,
 				BA1E427B187AB3E3001DBBD7 /* Supporting Files */,
 			);
@@ -292,6 +297,7 @@
 				BA1E42B4187AC7B8001DBBD7 /* RootViewController.m in Sources */,
 				BA1E4281187AB3E4001DBBD7 /* main.m in Sources */,
 				BA1E42B0187AC79A001DBBD7 /* NTAlertView.m in Sources */,
+				BA1E42B7187AC9D3001DBBD7 /* RootView.m in Sources */,
 				BA1E42AE187AC79A001DBBD7 /* NSTools.m in Sources */,
 				BA1E42B1187AC79A001DBBD7 /* NTEditeView.m in Sources */,
 				BA1E42AF187AC79A001DBBD7 /* PostRequest.m in Sources */,
