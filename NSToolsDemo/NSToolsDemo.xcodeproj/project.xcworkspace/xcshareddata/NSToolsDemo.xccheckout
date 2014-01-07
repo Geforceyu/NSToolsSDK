@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A04E5F22-0E23-4DC3-B13C-4A881F39A348</string>
+	<string>69302FD2-4553-4ED4-9682-68553979B38B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>NSToolsDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0FEFC7C9-54BD-4D92-9541-D98C86679CE0</key>
-		<string>https://github.com/Nemostar1989/NSToolsSDK.git</string>
+		<key>EBFBA500-84EA-431B-A982-9E6625A9EBB7</key>
+		<string>https://github.com/Geforceyu/NSToolsSDK.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>NSToolsDemo/NSToolsDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0FEFC7C9-54BD-4D92-9541-D98C86679CE0</key>
+		<key>EBFBA500-84EA-431B-A982-9E6625A9EBB7</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Nemostar1989/NSToolsSDK.git</string>
+	<string>https://github.com/Geforceyu/NSToolsSDK.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0FEFC7C9-54BD-4D92-9541-D98C86679CE0</string>
+	<string>EBFBA500-84EA-431B-A982-9E6625A9EBB7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0FEFC7C9-54BD-4D92-9541-D98C86679CE0</string>
+			<string>EBFBA500-84EA-431B-A982-9E6625A9EBB7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>NSToolsSDK</string>
 		</dict>
